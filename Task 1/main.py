@@ -71,7 +71,7 @@ class RugvedSystems:
 
 #6
     def anagram(self, st1, st2):
-        return sort(st1)==sort(st2) #sort function is above for question number 2
+        return self.sort(st1)==self.sort(st2) #sort function is above for question number 2
 
 #7
     def fibonacciSequence(self, n):
