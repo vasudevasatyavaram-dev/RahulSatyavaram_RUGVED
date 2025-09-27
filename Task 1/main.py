@@ -4,6 +4,7 @@ class RugvedSystems:
         return isBlack and isExpensive and isFast
     
 #2 
+    #sort a string and count occurence of each character
     def sort(self, strs):
         stringList = list(strs)
         length = len(strs)
@@ -22,6 +23,7 @@ class RugvedSystems:
         return strs
 
 #3
+    #stricly increasing then stricly decreasing (but also one digit numbers count)
     def hillNumber(self, number):
         lastDigit = number % 10
         num = number // 10
@@ -60,6 +62,7 @@ class RugvedSystems:
         return "".join(arr)
 
 #5
+
     def fibonacci(self, num):
         if num <=1:
             return num
@@ -70,6 +73,7 @@ class RugvedSystems:
     print(fibonacci(num))
 
 #6
+    #if both strings are rearrangements of each other
     def anagram(self, st1, st2):
         return self.sort(st1)==self.sort(st2) #sort function is above for question number 2
 
@@ -87,6 +91,7 @@ class RugvedSystems:
                 print(b, end=" ")
 
 #8
+    #splits string into num parts and checks if each part is equal
     def equalString1(self,strs,num):
         if len(strs)%num!=0:
             print("Not Possible")
@@ -103,6 +108,7 @@ class RugvedSystems:
                 print("Success")
 
 #9
+    #shifts every character in the string by a shift in its ascii
     def ceaserCipher(self, shift, strs):
         result = ""
         for char in strs:
@@ -114,6 +120,8 @@ class RugvedSystems:
                 result += char
 
 #10
+    #sum of digits
+    #except for every other digit, sum of the digits of the double of the digit is counted instead of the digit itself
     def luhns(self, num):
         sum = 0
         length = len(num)
