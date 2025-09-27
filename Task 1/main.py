@@ -23,23 +23,29 @@ class RugvedSystems:
 
 #3
     def hillNumber(self, number):
-        lastDigit = number%10
-        num = number//10
-        secondLast = num%10
-        if num==0:
+        lastDigit = number % 10
+        num = number // 10
+        secondLast = num % 10
+        if num == 0:
             return True
-        elif secondLast<lastDigit:
-            return False
-        lastDigit = secondLast
-        num = num//10
-        secondLast = num%10
-        while num>0:
+        increased = False
+        while num > 0 and secondLast < lastDigit:
+            if secondLast == lastDigit:
+                return False  # no repeats
+            increased = True
             lastDigit = secondLast
-            num = num//10
-            secondLast = num%10
-            if(lastDigit<secondLast):
-                return False
+            num = num // 10
+            secondLast = num % 10
+        if not increased:
+            return False  # must have increasing phase before decreasing
+        while num > 0:
+            if secondLast == lastDigit or secondLast > lastDigit:
+                return False  # must strictly decrease, and no repeats
+            lastDigit = secondLast
+            num = num // 10
+            secondLast = num % 10
         return True
+
 
 #4
     def selectionSort(self, arr):
